@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-facade type = "demo">
+    <tutorial.party.Party partyId="P1001" partyTypeEnumId="PERSON" createdDate="2026-01-20T10:00:00"/>
+
+    <tutorial.party.Person partyId="P1001" firstName="Gourav" lastName="Mehto" dateOfBirth="2003-12-18"/>
+
+    <tutorial.party.Party partyId="G2001" partyTypeEnumId="PARTY_GROUP" createdDate="2026-01-20T10:05:00"/>
+
+    <tutorial.party.PartyGroup partyId="G2001" groupName="Engineering Team" description="Internal engineering department"/>
+
+    <tutorial.party.ContactMech contactMechId="CM3001" contactMechTypeId="EMAIL" infoString="mehto@gmail.com"
+                                createdDate="2026-01-20T10:10:00"/>
+
+    <tutorial.party.ContactMech contactMechId="CM3002" contactMechTypeId="TELECOM_NUMBER" infoString="+91-9876543210"
+                                createdDate="2026-01-20T10:12:00"/>
+
+    <tutorial.Party.PartyContactMech partyId="P1001" contactMechId="CM3001" fromDate="2026-01-20T10:15:00"/>
+
+    <tutorial.Party.PartyContactMech partyId="P1001" contactMechId="CM3002" fromDate="2026-01-20T10:16:00"/>
+
+</entity-facade>
