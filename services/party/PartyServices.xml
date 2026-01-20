@@ -30,4 +30,13 @@
                  value="Person ${firstName} ${lastName} created successfully!"/>
         </actions>
     </service>
+
+    <service verb="create" noun="PersonGroovy" type="script" location="component://final-party/script/createPerson.groovy">
+        <in-parameters>
+            <auto-parameters entity-name="tutorial.party.Person"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="responseMessage"/>
+        </out-parameters>
+    </service>
 </services>
