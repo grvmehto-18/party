@@ -8,4 +8,26 @@
             <auto-parameters entity-name="tutorial.party.Party" include="pk"/>
         </out-parameters>
     </service>
+
+    <service verb="createPerson" noun="Person">
+        <in-parameters>
+            <auto-parameters entity-name="tutorial.party.Person"/>
+            <parameter name="partyId" required="true"/>
+            <parameter name="firstName" required="true" >
+                <text-length min="2"/>
+            </parameter>
+            <parameter name="lastName" required="true">
+                <text-length min="2"/>
+            </parameter>
+        </in-parameters>
+
+        <out-parameters>
+            <parameter name="successMessage"/>
+        </out-parameters>
+
+        <actions>
+            <set field="successMessage"
+                 value="Person ${firstName} ${lastName} created successfully!"/>
+        </actions>
+    </service>
 </services>
