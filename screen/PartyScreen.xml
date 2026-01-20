@@ -2,8 +2,38 @@
 <screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
         require-authentication="anonymous-all"
 >
+
+    <actions>
+        <entity-find entity-name="tutorial.party.Party" list="partyList"/>
+        <entity-find entity-name="tutorial.party.Person" list="personList"/>
+        <entity-find entity-name="tutorial.party.PartyGroup" list="personGroupList"/>
+    </actions>
+
     <widgets>
-        <label text="Hello World" type="h1"/>
+
+        <container>
+
+            <label text="Party Screen" type="h1"/>
+
+            <label text="Party List" type="h3"/>
+            <form-list name="PartyList" list="partyList">
+                <auto-fields-entity entity-name="tutorial.party.Party" field-type="display"/>
+            </form-list>
+
+            <label text="Person List" type="h3"/>
+            <form-list name="PartyList" list="personList">
+              <auto-fields-entity entity-name="tutorial.party.Person" field-type="display"/>
+            </form-list>
+
+            <label text="Party Group List" type="h3"/>
+            <form-list name="PersonGroupList" list="personGroupList">
+                <auto-fields-entity entity-name="tutorial.party.PartyGroup" field-type="display"/>
+            </form-list>
+
+        </container>
+
+
     </widgets>
+
 
 </screen>
