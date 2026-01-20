@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
         require-authentication="anonymous-all"
+        include-child-content="true"
 >
+    <subscreens default-item="PartyForm"/>
 
     <actions>
         <entity-find entity-name="tutorial.party.Party" list="partyList"/>
@@ -14,6 +16,8 @@
         <container>
 
             <label text="Party Screen" type="h1"/>
+
+            <subscreens-active/>
 
             <label text="Party List" type="h3"/>
             <form-list name="PartyList" list="partyList">
