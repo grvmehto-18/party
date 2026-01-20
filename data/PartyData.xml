@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<entity-facade type = "demo">
+<entity-facade-xml type = "seed">
     <tutorial.party.Party partyId="P1001" partyTypeEnumId="PERSON" createdDate="2026-01-20T10:00:00"/>
 
     <tutorial.party.Person partyId="P1001" firstName="Gourav" lastName="Mehto" dateOfBirth="2003-12-18"/>
@@ -18,4 +18,4 @@
 
     <tutorial.Party.PartyContactMech partyId="P1001" contactMechId="CM3002" fromDate="2026-01-20T10:16:00"/>
 
-</entity-facade>
+</entity-facade-xml>

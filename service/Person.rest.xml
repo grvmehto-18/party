@@ -2,10 +2,10 @@
           name="person" displayName="Person Rest Api Example" version="0.0.1">
     <resource name="person" require-authentication="anonymous-all">
         <method type="post">
-            <service name="party.PartyServices.create#Party"/>
+            <service name="PartyServices.create#Party"/>
         </method>
         <method type="post">
-            <service name="party.PartyServices.create#PersonGroovy"/>
+            <service name="PartyServices.create#PersonGroovy"/>
         </method>
     </resource>
 </resource>
