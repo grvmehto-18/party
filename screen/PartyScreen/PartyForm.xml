@@ -3,11 +3,20 @@
         require-authentication="anonymous-all">
     <transition name="createForm">
         <service-call name="party.PartyServices.create#Party"/>
-        <default-response url="."/>
+        <actions>
+            <if condition="partyTypeEnumId =='PERSON'" >
+                <set field="partyForm" value="../PersonForm"/>
+                <else-if condition="partyTypeEnumId == 'PARTY_GROUP'">
+                    <set field="partyForm" value="../PartyGroupForm"/>
+                </else-if>
+                <else>
+                    <set field="partyForm" value="."/>
+                </else>
+            </if>
+        </actions>
+
+        <default-response url="${partyForm}"/>
     </transition>
-    <actions>
-        <entity-find entity-name="tutorial.party.Party" list="enumList"/>
-    </actions>
 
     <widgets>
         <container-dialog id="createParty" button-text="Create Party">
@@ -24,8 +33,9 @@
 
                     <default-field >
                         <drop-down >
-                        <list-options list="enumList" key="${partyTypeEnumId}" />
-
+<!--                        <list-options list="enumList" key="${partyTypeEnumId}" />-->
+                            <option key="PERSON" text="Person Enum"/>
+                            <option key="PARTY_GROUP" text="Party Group Enum"/>
                         </drop-down>
                     </default-field>
 

@@ -5,15 +5,15 @@
         <field name="partyTypeEnumId" type="id"/>
         <field name="createdDate" type="date-time" />
 
-        <relationship type="one" related="moqui.basic.Enumeration" title="PartyType" >
+        <relationship type="one" related="moqui.basic.Enumeration" >
             <key-map field-name="partyTypeEnumId"/>
         </relationship>
 
         <seed-data>
-            <moqui.basic.EnumerationType description="Party type" enumTypeId="PartyType"/>
-            <moqui.basic.Enumeration description="PERSON" enumId="PERSON" enumTypeId="PartyType"/>
-            <moqui.basic.EnumerationType description="Party Group type" enumTypeId="PartyType"/>
-            <moqui.basic.Enumeration description="Party group" enumId="PARTY_GROUP" enumTypeId="PartyType"/>
+            <moqui.basic.EnumerationType description="Party type" enumTypeId="partyTypeEnumId"/>
+            <moqui.basic.Enumeration description="PERSON" enumId="PERSON" enumTypeId="partyTypeEnumId"/>
+            <moqui.basic.EnumerationType description="Party Group type" enumTypeId="partyTypeEnumId"/>
+            <moqui.basic.Enumeration description="Party group" enumId="PARTY_GROUP" enumTypeId="partyTypeEnumId"/>
         </seed-data>
 
     </entity>

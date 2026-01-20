@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd" require-authentication="anonymous-all" >
+    <parameter name="partyId" required="true"/>
+    <transition name="createForm">
+        <service-call name="create#Person"/>
+        <default-response url="../PartyForm"/>
+    </transition>
+
+    <widgets>
+            <form-single name="PartyCreateForm" transition="createForm" >
+                <auto-fields-service service-name="create#Person" />
+                <field name="partyId" from="partyId" ><default-field ><display/></default-field></field>
+                <field name="submit"><default-field>
+                    <submit/>
+                </default-field></field>
+
+
+            </form-single>
+
+    </widgets>
+
+</screen>
