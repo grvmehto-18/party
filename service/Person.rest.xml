@@ -1,10 +1,13 @@
 <resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-3.xsd"
-          name="person" displayName="Person Rest Api Example" version="0.0.1">
-    <resource name="person" require-authentication="anonymous-all">
+          name="party" displayName="Person Rest Api Example" version="0.0.1">
+    <resource name="party" require-authentication="anonymous-all">
         <method type="post">
-            <service name="PartyServices.create#Party"/>
+            <service name="create#Party"/>
         </method>
-        <method type="post">
+    </resource>
+
+    <resource name="person" require-authentication="anonymous-all">
+        <method type="post" >
             <service name="PartyServices.create#PersonGroovy"/>
         </method>
     </resource>

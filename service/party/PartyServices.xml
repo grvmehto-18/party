@@ -27,8 +27,17 @@
         </out-parameters>
 
         <actions>
-            <set field="successMessage"
-                 value="Person ${firstName} ${lastName} created successfully!"/>
+            <entity-find-one entity-name="tutorial.party.Party" value-field="party"/>
+            <if condition="party.partyTypeEnumId == 'PERSON'">
+                <service-call name="create#Person" in-map="context" out-map="context"/>
+                <set field="successMessage"
+                     value="Person ${firstName} ${lastName} created successfully!"/>
+                <else>
+                    <script>
+                        ec.message.addError("Party Type Must be Person")
+                    </script>
+                </else>
+            </if>
         </actions>
     </service>
 
