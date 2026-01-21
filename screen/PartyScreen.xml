@@ -20,8 +20,8 @@
             <subscreens-active/>
 
             <label text="Party List" type="h3"/>
-            <form-list name="PartyList" list="partyList">
-                <auto-fields-entity entity-name="tutorial.party.Party" field-type="display"/>
+            <form-list name="PartyList" list="partyList" header-dialog="true" skip-form="true">
+                <auto-fields-entity entity-name="tutorial.party.Party" field-type="edit"/>
             </form-list>
 
             <label text="Person List" type="h3"/>
